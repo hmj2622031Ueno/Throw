@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BombController : MonoBehaviour
 {
-    [SerializeField] GameObject manager;
+    private GameManager gameManager;
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Arena") || collision.CompareTag("Enemy"))
@@ -10,7 +10,7 @@ public class BombController : MonoBehaviour
             Destroy(gameObject);
             if(collision.CompareTag("Enemy"))
             {
-                manager.GetComponent<GameManager>().HitEnemy();
+                gameManager.HitEnemy();
             }
         }
     }
@@ -18,7 +18,7 @@ public class BombController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     // Update is called once per frame

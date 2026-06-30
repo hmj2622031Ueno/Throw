@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Bomb"))
+        if(collision.CompareTag("Bomb") || collision.CompareTag("Player") || collision.CompareTag("Arena"))
         {
             Destroy(gameObject);
         }
@@ -36,6 +37,12 @@ public class EnemyController : MonoBehaviour
         else
         {
             animator.SetBool("isWalk", false);
+        }
+
+        if(transform.position.z <= player.position.z)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("ResultScene");
         }
     }
 }

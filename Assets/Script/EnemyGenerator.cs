@@ -15,7 +15,7 @@ public class EnemyGenerator : MonoBehaviour
     {
         float randomX = Random.Range(-20f, 25f);
 
-        Vector3 spawnPos = new Vector3(randomX, transform.position.y + 1.5f, transform.position.z);
+        Vector3 spawnPos = new Vector3(randomX, transform.position.y + 2.0f, transform.position.z);
 
         Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
     }

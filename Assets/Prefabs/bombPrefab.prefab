@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e528c627b5daa0f44b2cb28e61054da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BombController
+  HitSE: {fileID: 8300000, guid: 6f1b101311555bc4bbf0967d8684e08e, type: 3}

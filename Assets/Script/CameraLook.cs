@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,6 +30,8 @@ public class CameraLook : MonoBehaviour
 
         Vector3 offset = rotation * new Vector3(0, height, -distance);
 
+        if (target == null) { return; }
+
         transform.position = target.position + offset;
 
         //transform.LookAt(target);
@@ -37,7 +40,7 @@ public class CameraLook : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        yaw = target.eulerAngles.y;
     }
 
     // Update is called once per frame

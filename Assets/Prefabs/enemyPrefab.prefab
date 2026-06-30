@@ -107,7 +107,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c6763ad289bc04fa65eb8e329280a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  speed: 2
+  speed: 5
   player: {fileID: 436233013341640821, guid: 008484a0564d0954fac03ae61fe0460c, type: 3}
   animator: {fileID: 7400195883477143491}
   bombPrefab: {fileID: 3184557771898664140, guid: 9e909e81d63254741ab2a9d3c965c49f, type: 3}

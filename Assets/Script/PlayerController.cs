@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,6 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Transform cameraTransform;
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("ResultScene");
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,6 +51,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.forward = move; 
             animator.SetBool("isRun", true);
+            animator.SetBool("isSideRun", true);
         }
         else { animator.SetBool("isRun", false); }
     }
